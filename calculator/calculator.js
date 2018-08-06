@@ -7,11 +7,11 @@ function add (a) {
 };
 
 function subtract (a) {
-	var sum = a;
+	var diff = a;
 	for (i = 1; i < arguments.length; i++) {
-		sum -= arguments[i];
+		diff -= arguments[i];
 	};
-	return sum;
+	return diff;
 };
 
 function sum (a) {
