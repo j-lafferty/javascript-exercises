@@ -25,6 +25,9 @@ function translate(str) {
 					};
 					var consB = strArr.shift();
 					strArr.push(consB);
+				} else if (strArr[1] == vowelArr[4]) {
+					var vowelU = strArr.shift();
+					strArr.push(vowelU);
 				};
 			};
 			var consA = strArr.shift();
