@@ -1,5 +1,28 @@
 var fibonacci = function(num) {
-    var fibArr = [1, 1];
+//Improved solution
+
+    var fibArr = [];
+
+    fibArr[0] = 0;
+    fibArr[1] = 1;
+
+    if (num < 0) {
+        return "OOPS";
+    };
+
+    for (var i = 2; i <= num; i++) {
+        fibArr[i] = fibArr[i - 2] + fibArr[i - 1];
+    };
+
+    return fibArr[fibArr.length - 1]; 
+};
+
+module.exports = fibonacci
+
+/* 
+Original solution
+
+var fibArr = [1, 1];
 
     if (num < 0) {
         return "OOPS";
@@ -13,6 +36,4 @@ var fibonacci = function(num) {
         };
     };
     return fibArr[fibArr.length - 1];    
-};
-
-module.exports = fibonacci
+*/
