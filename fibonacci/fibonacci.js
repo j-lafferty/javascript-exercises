@@ -14,7 +14,7 @@ var fibonacci = function(num) {
         fibArr[i] = fibArr[i - 2] + fibArr[i - 1];
     };
 
-    return fibArr[fibArr.length - 1]; 
+    return fibArr[num]; 
 };
 
 module.exports = fibonacci
