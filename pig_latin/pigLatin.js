@@ -1,45 +1,61 @@
 function translate(str) {
 	
 	var strArr = [];
+	var pigStr = "";
+
+	strArr = str.split(' ');
+
+	for (var i = 0; i < strArr.length; i++) {
+		pigStr += convert(strArr[i]) + " ";
+	};
+
+	return pigStr.slice(0, -1);
+};
+
+
+function convert(word) {
+
+	var convertArr = [];
 	var vowelArr = ['a', 'e', 'i', 'o', 'u'];
 	var consArr = ['q', 'w', 'r', 't', 'y', 'p', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm'];
 
-	strArr = str.split("");
+	convertArr = word.split('');
 
-	for (var i = 0; i < vowelArr.length; i++) {
-		if (strArr[0] == vowelArr[i]) {
-			strArr.push('a');
-			strArr.push('y');
+	for (var i = 0; i < word.length; i++) {
+		if (convertArr[0] == vowelArr[i]) {
+			convertArr.push('a');
+			convertArr.push('y');
 		};
 	};
 
 	for (var i = 0; i < consArr.length; i++) {
-		if (strArr[0] == consArr[i]) {
+		if (convertArr[0] == consArr[i]) {
 			for (var j = 0; j < consArr.length; j++) {
-				if (strArr[1] == consArr[j]) {
+				if (convertArr[1] == consArr[j]) {
 					for (var k = 0; k < consArr.length; k++) {
-						if (strArr[2] == consArr[k]) {
-							var consC = strArr.shift();
-							strArr.push(consC);
+						if (convertArr[2] == consArr[k]) {
+							var consC = convertArr.shift();
+							convertArr.push(consC);
 						};
 					};
-					var consB = strArr.shift();
-					strArr.push(consB);
-				} else if (strArr[1] == vowelArr[4]) {
-					var vowelU = strArr.shift();
-					strArr.push(vowelU);
+					var consB = convertArr.shift();
+					convertArr.push(consB);
+				} else if (convertArr[1] == vowelArr[4]) {
+					var vowelU = convertArr.shift();
+					convertArr.push(vowelU);
 				};
 			};
-			var consA = strArr.shift();
-			strArr.push(consA);
-			strArr.push('a');
-			strArr.push('y');
+			var consA = convertArr.shift();
+			convertArr.push(consA);
+			convertArr.push('a');
+			convertArr.push('y');
 		};
 	};
 
-	return strArr.join('');
+	return convertArr.join('');
 
 };
+
 
 
 module.exports = {
