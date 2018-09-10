@@ -5,6 +5,7 @@ var removeFromArray = function() {
     var check;
     var remove;
 
+    //check arguments for arrays
     for (var i = 0; i < arguments.length; i++) {
         arg = arguments[i];
         if (Array.isArray(arg)) {
@@ -14,9 +15,10 @@ var removeFromArray = function() {
         };
     };
 
+    //check and remove mainArr values that match arguArr values
     for (var i = 0; i < arguArr.length; i++) {
         check = arguArr[i];
-        if (mainArr.indexOf(check) > 0) {
+        if (mainArr.indexOf(check) >= 0) {
             remove = mainArr.indexOf(check);
             mainArr.splice(remove, 1);
         };
